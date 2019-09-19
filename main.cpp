@@ -49,13 +49,10 @@ int main() {
             }
 
             minDist = calcularDistancia(puntos[0], puntos[1]);
-            for (int i = 0; i < numPunts; ++i) {
-                for (int j = 0; j < numPunts; ++j) {
-                    if(i!=j){
-                        temp = calcularDistancia(puntos[i], puntos[j]);
-                        if (minDist > temp)
-                            minDist = temp;
-                    }
+            for (int i = 0; i < numPunts-1; ++i) {
+                for (int j = i+1; j < numPunts; ++j) {
+                    temp = calcularDistancia(puntos[i], puntos[j]);
+                    if (minDist > temp) minDist = temp;
                 }
             }
             if (minDist >= 10000) {cout << "INFINITY" << endl;}
